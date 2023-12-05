@@ -19,6 +19,7 @@
   --white-color: white;
   background-color: var(--background-color);
 
+  min-width: 1200px;
   width: 100%;
   height: auto;
 
