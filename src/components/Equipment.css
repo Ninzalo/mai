@@ -1,0 +1,90 @@
+.equipment-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.equipment-container > .bookmark {
+  background-color: rgb(210, 210, 210, 0.6);
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 75px;
+}
+
+.equipment {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: auto;
+}
+
+.equipment > h1 {
+  margin: 0;
+  margin-left: 45px;
+  padding: 0;
+
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.equipment > .equipment-objects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.equipment > .equipment-objects > .equipment-object {
+  display: flex;
+  flex-direction: row;
+
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+
+  width: 1000px;
+  height: auto;
+}
+
+.equipment > .equipment-objects > .equipment-object > .text-block {
+  background-color: rgb(210, 210, 210, 0.6);
+  border: none;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  width: 50%;
+  height: auto;
+  padding: 0;
+  padding-bottom: 15px;
+}
+.equipment > .equipment-objects > .equipment-object > .text-block > p {
+  margin: 0;
+  margin-left: 20px;
+  padding: 0;
+  white-space: pre-line;
+  font-weight: 200;
+  font-size: 17px;
+}
+
+.equipment > .equipment-objects > .equipment-object > .text-block > h2 {
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+.equipment > .equipment-objects > .equipment-object > .equipment-img {
+  border-left: 4px solid black;
+
+  margin: 0;
+  padding: 0;
+
+  width: 50%;
+  height: auto;
+}

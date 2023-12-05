@@ -1,0 +1,57 @@
+.projects-container {
+  display: flex;
+  flex-direction: row;
+
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.projects-container > .bookmark {
+  border: none;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: rgb(210, 210, 210, 0.6);
+  width: 75px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 45px;
+  padding: 0;
+  width: calc(100% - 45px);
+  height: auto;
+}
+
+.projects > h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.projects > .projects-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects > .projects-list > .project__card {
+  display: flex;
+  flex-direction: row;
+  margin: 0 10%;
+  padding: 0;
+}
+
+.projects > .projects-list > .project__card > .project__info > h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+.projects > .projects-list > .project__card > .project__img {
+  width: 450px;
+  height: 350px;
+}

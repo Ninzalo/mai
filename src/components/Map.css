@@ -1,0 +1,26 @@
+.maps-component {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
+.maps-component > .info-block {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  width: 30%;
+  height: auto;
+}
+
+.maps-component > .info-block > h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+.maps-component > .map-block {
+  width: 70%;
+}

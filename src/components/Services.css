@@ -1,0 +1,53 @@
+.services {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.services > .bookmark {
+  border: none;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: rgb(210, 210, 210, 0.6);
+  width: 75px;
+}
+
+.services > .text-area {
+  margin: 0;
+  margin-left: 45px;
+  padding: 0;
+  width: calc(100% - 45px);
+  height: auto;
+}
+
+.services > .text-area > h1 {
+  font-weight: 400;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.services > .text-area > p {
+}
+
+.services > .text-area > p,
+.services > .text-area > .list > .list-item {
+  font-weight: 250;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.services > .text-area > .list {
+  margin: 0;
+  margin-left: 25px;
+  padding: 0;
+  width: calc(100% - 25px);
+  height: auto;
+}
+
+.services > .text-area > .list > .list-item {
+  margin: 10px 0;
+  padding: 0;
+}
