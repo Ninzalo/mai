@@ -2,6 +2,8 @@ import React from 'react'
 import './Projects.css'
 import pr1 from '../images/projects/pr1.png'
 import pr2 from '../images/projects/pr2.png'
+import Bookmark from './Bookmark'
+import projectsLogoImg from '../images/about__projects.png'
 
 export default function Projects() {
   const projects = [
@@ -31,7 +33,7 @@ export default function Projects() {
 
   return (
     <div className='projects-container'>
-      <div className='bookmark'></div>
+      <Bookmark logoImg={projectsLogoImg} />
       <div className='projects'>
         <h1>Проекты</h1>
         <div className='projects-list'>{projectsEl}</div>

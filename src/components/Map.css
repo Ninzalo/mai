@@ -1,4 +1,5 @@
 .maps-component {
+  border-top: 3px solid var(--block-grey-color);
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -7,7 +8,7 @@
 
 .maps-component > .info-block {
   text-align: center;
-  margin: 0;
+  margin: 0 20px;
   padding: 0;
 
   width: 30%;

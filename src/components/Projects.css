@@ -7,14 +7,6 @@
   padding: 0;
 }
 
-.projects-container > .bookmark {
-  border: none;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  background-color: rgb(210, 210, 210, 0.6);
-  width: 75px;
-}
-
 .projects {
   display: flex;
   flex-direction: column;
@@ -38,9 +30,18 @@
 }
 
 .projects > .projects-list > .project__card {
+  background-color: var(--block-grey-color);
+
+  border: none;
+  border-radius: 50px;
   display: flex;
   flex-direction: row;
-  margin: 0 10%;
+  margin: 0 10% 20px 10%;
+  padding: 0;
+}
+
+.projects > .projects-list > .project__card > .project__info {
+  margin: 10px 50px 0 20px;
   padding: 0;
 }
 
@@ -52,6 +53,7 @@
 }
 
 .projects > .projects-list > .project__card > .project__img {
+  border-right: 3px solid black;
   width: 450px;
   height: 350px;
 }

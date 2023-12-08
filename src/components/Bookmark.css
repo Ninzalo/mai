@@ -1,0 +1,22 @@
+.bookmark {
+  background-color: var(--block-grey-color);
+
+  display: flex;
+  flex-direction: column;
+
+  border: none;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  width: 75px;
+
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+}
+
+.bookmark > .bookmark-logo {
+  border: none;
+  margin: 0 auto;
+  padding: 0;
+}

@@ -17,12 +17,18 @@
   --light-blue-color: #9cbcf4;
   --grey-color: #f0f0f0;
   --white-color: white;
+  --block-grey-color: rgb(210, 210, 210, 0.6);
   background-color: var(--background-color);
 
   min-width: 1200px;
   width: 100%;
   height: auto;
 
+  margin: 0;
+  padding: 0;
+}
+
+body {
   margin: 0;
   padding: 0;
 }

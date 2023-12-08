@@ -7,6 +7,8 @@ import lasersys from '../images/equipment/lasersys.png'
 import phrozen from '../images/equipment/phrozen.png'
 import prusa_bambu from '../images/equipment/Prusa_Bambu.png'
 import stereotech from '../images/equipment/Stereotech.png'
+import Bookmark from './Bookmark'
+import equipmentLogoImg from '../images/about__equipment.png'
 
 export default function Equipment() {
   const equipment = [
@@ -96,20 +98,67 @@ export default function Equipment() {
       itemUseCase: `Рабочие высоконагруженные изделия;
 Изделия со сложной внутренней геометрией, непригодные для производства традиционными методами.`,
     },
+    {
+      itemName: 'Координатно-измерительная машина FARO ARM EDGE',
+      itemImg: '',
+      itemMaterial: ``,
+      itemDescription: `Контактный щуп FARO
+Оптический излучатель Kreon Zephyr 50
+Габариты объекта: до 1.2 м
+Точность: от 30 мкм`,
+      itemUseCase: ``,
+    },
+    {
+      itemName: '3D-сканер RangeVision Spectrum',
+      itemImg: '',
+      itemMaterial: ``,
+      itemDescription: `Две промышленные камеры для более точного определения 3D точки и 3 области сканирования
+Габариты объекта: до 3 м
+Точность: от 40 мкм`,
+      itemUseCase: ``,
+    },
+    {
+      itemName: 'Портативный оптический сканер FARO Focus 3D',
+      itemImg: '',
+      itemMaterial: ``,
+      itemDescription: `Лазерный сканер с высокой скоростью обработки данных и высокой эффективностью
+Габариты объекта: до 10 м
+Точность: от 100 мкм на 4 метра`,
+      itemUseCase: ``,
+    },
+    {
+      itemName: ' Scanform L5',
+      itemImg: '',
+      itemMaterial: ``,
+      itemDescription: `Ручной 3D-сканер, работающий по технологии триангуляции лазерной сетки
+Габариты объекта: до 4 м
+Точность: до 40 мкм`,
+      itemUseCase: ``,
+    },
   ]
 
   const equipmentEl = equipment.map((item) => (
     <div
       className='equipment-object'
-      key={`${item.itemName}-${item.itemMaterial}`}
+      key={`equipment-object-${item.itemName}-${item.itemMaterial}`}
     >
       <div className='text-block'>
         <h2 className='equipment-name'>{item.itemName}</h2>
-        <p className='equipment-description'>{item.itemDescription}</p>
-        <p>Материал:</p>
-        <p>{item.itemMaterial}</p>
-        <p>Области применения:</p>
-        <p>{item.itemUseCase}</p>
+        {item.itemDescription && (
+          <p className='equipment-description'>{item.itemDescription}</p>
+        )}
+        {item.itemMaterial && (
+          <p>
+            Материал: <br />
+            {item.itemMaterial}
+          </p>
+        )}
+        {item.itemUseCase && (
+          <p>
+            Области применения: <br />
+            {item.itemUseCase}
+          </p>
+        )}
       </div>
       <img className='equipment-img' src={item.itemImg} />
     </div>
@@ -117,7 +166,7 @@ export default function Equipment() {
 
   return (
     <div className='equipment-container'>
-      <div className='bookmark'></div>
+      <Bookmark logoImg={equipmentLogoImg} />
       <div className='equipment'>
         <h1>Оборудование</h1>
         <div className='equipment-objects'>{equipmentEl}</div>

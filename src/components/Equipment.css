@@ -4,13 +4,6 @@
   flex-direction: row;
 }
 
-.equipment-container > .bookmark {
-  background-color: rgb(210, 210, 210, 0.6);
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  width: 75px;
-}
-
 .equipment {
   display: flex;
   flex-direction: column;
@@ -54,7 +47,7 @@
 }
 
 .equipment > .equipment-objects > .equipment-object > .text-block {
-  background-color: rgb(210, 210, 210, 0.6);
+  background-color: var(--block-grey-color);
   border: none;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -72,10 +65,14 @@
   font-size: 17px;
 }
 
-.equipment > .equipment-objects > .equipment-object > .text-block > h2 {
+.equipment
+  > .equipment-objects
+  > .equipment-object
+  > .text-block
+  > .equipment-name {
   text-align: center;
 
-  margin: 0;
+  margin: 0 25px;
   padding: 0;
 }
 

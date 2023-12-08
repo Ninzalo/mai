@@ -1,16 +1,18 @@
 import React from 'react'
 import './Services.css'
+import Bookmark from './Bookmark'
+import servicesImg from '../images/about__services.png'
 
 export default function Services() {
   return (
     <div className='services'>
-      <div className='bookmark'></div>
+      <Bookmark logoImg={servicesImg} />
       <div className='text-area'>
         <h1>Компетенции</h1>
         <p>Лаборатория занимается:</p>
         <ul className='list'>
           <li className='list-item'>3D-сканированием;</li>
-          <li className='list-item'>3D- печатью (SLM,SLS,FDM,DLP);</li>
+          <li className='list-item'>3D-печатью (SLM,SLS,FDM,DLP);</li>
           <li className='list-item'>Моделированием;</li>
           <li className='list-item'>Прототипированием;</li>
           <li className='list-item'>
