@@ -4,84 +4,156 @@
   flex-direction: row;
 }
 
-.equipment {
-  display: flex;
-  flex-direction: column;
-
-  margin: 0;
-  padding: 0;
-
-  width: 100%;
-  height: auto;
-}
-
-.equipment > h1 {
+.equipment-container > .equipment {
   margin: 0;
   margin-left: 45px;
   padding: 0;
+  width: calc(100% - 45px);
+  height: auto;
+}
 
+.equipment-container > .equipment > h1 {
   font-weight: 400;
   font-size: 50px;
+  margin: 0;
+  padding: 0;
 }
 
-.equipment > .equipment-objects {
+.equipment-container > .equipment > .equipment__carousel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.equipment-container > .equipment > .equipment__carousel > .nav {
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 1rem;
+
+  background-color: var(--block-grey-color);
+
+  height: 4rem;
+  width: 4rem;
+
+  cursor: pointer;
+
+  &.left {
+    left: calc(45px + 75px);
+  }
+
+  &.right {
+    right: 45px;
+  }
+}
+.equipment-container > .equipment > .equipment__carousel > .nav > img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.equipment-container > .equipment > .equipment__carousel > .carousel {
+  position: relative;
+  width: 30rem;
+  min-height: 55rem;
+  height: auto;
+  perspective: "500px";
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.equipment-container
+  > .equipment
+  > .equipment__carousel
+  > .carousel
+  > .card-container {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  transform: rotateY(calc(var(--offset) * 50deg))
+    scaleY(calc(1 + var(--abs-offset) * -0.4))
+    translateZ(calc(var(--abs-offset) * -30rem))
+    translateX(calc(var(--direction) * -17rem));
+  filter: blur(calc(var(--abs-offset) * 1rem));
+  transition: all 0.3s ease-out;
+  background-color: rgb(210, 210, 210);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 2rem;
+}
+
+.equipment-container
+  > .equipment
+  > .equipment__carousel
+  > .carousel
+  > .card-container
+  > .equipment-item {
+  height: auto;
+  width: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.equipment-container
+  > .equipment
+  > .equipment__carousel
+  > .carousel
+  > .card-container
+  > .equipment-item
+  > img {
+  height: 20rem;
+  width: 20rem;
+  padding: 0;
   margin: 0;
-  margin-top: 20px;
-  padding: 0;
+  margin-bottom: 1rem;
 }
 
-.equipment > .equipment-objects > .equipment-object {
-  display: flex;
-  flex-direction: row;
-
-  margin: 0;
-  margin-bottom: 20px;
-  padding: 0;
-
-  width: 1000px;
-  height: auto;
-}
-
-.equipment > .equipment-objects > .equipment-object > .text-block {
-  background-color: var(--block-grey-color);
-  border: none;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  width: 50%;
-  height: auto;
-  padding: 0;
-  padding-bottom: 15px;
-}
-.equipment > .equipment-objects > .equipment-object > .text-block > p {
-  margin: 0;
-  margin-left: 20px;
-  padding: 0;
-  white-space: pre-line;
-  font-weight: 200;
-  font-size: 17px;
-}
-
-.equipment
-  > .equipment-objects
-  > .equipment-object
-  > .text-block
-  > .equipment-name {
-  text-align: center;
-
-  margin: 0 25px;
-  padding: 0;
-}
-
-.equipment > .equipment-objects > .equipment-object > .equipment-img {
-  border-left: 4px solid black;
-
+.equipment-container
+  > .equipment
+  > .equipment__carousel
+  > .carousel
+  > .card-container
+  > .equipment-item
+  > .equipment-item__inner-text
+  > p {
   margin: 0;
   padding: 0;
+}
 
-  width: 50%;
-  height: auto;
+.equipment-container
+  > .equipment
+  > .equipment__carousel
+  > .carousel
+  > .card-container
+  > .equipment-item
+  > .equipment-item__inner-text
+  > h3 {
+  margin: 0;
+  margin-top: 0.3rem;
+  padding: 0;
+}
+
+.equipment-container
+  > .equipment
+  > .equipment__carousel
+  > .carousel
+  > .card-container
+  > .equipment-item
+  > .equipment-item__inner-text
+  > ul {
+  margin: 0;
+  margin-left: 1.2rem;
+  padding: 0;
 }

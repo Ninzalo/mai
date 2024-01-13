@@ -11,7 +11,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --header-image: url('https://thumb.tildacdn.com/tild3564-3439-4061-a539-376639336337/-/cover/560x400/center/center/-/format/webp/IMG_3800.JPG');
+  --header-image: url("https://thumb.tildacdn.com/tild3564-3439-4061-a539-376639336337/-/cover/560x400/center/center/-/format/webp/IMG_3800.JPG");
   --background-color: #f4f3f3;
   --blue-color: #3c649c;
   --light-blue-color: #9cbcf4;

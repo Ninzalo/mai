@@ -1,176 +1,260 @@
-import React from 'react'
-import './Equipment.css'
-import eos from '../images/equipment/EOS.png'
-import anycubic from '../images/equipment/Anycubic.png'
-import eos_m270 from '../images/equipment/EOS_M270.png'
-import lasersys from '../images/equipment/lasersys.png'
-import phrozen from '../images/equipment/phrozen.png'
-import prusa_bambu from '../images/equipment/Prusa_Bambu.png'
-import stereotech from '../images/equipment/Stereotech.png'
-import Bookmark from './Bookmark'
-import equipmentLogoImg from '../images/about__equipment.png'
+import "./Equipment.css";
+import Bookmark from "./Bookmark";
+import React from "react";
+import PropTypes from "prop-types";
 
-export default function Equipment() {
-  const equipment = [
-    {
-      itemName: 'EOS P395',
-      itemImg: eos,
-      itemMaterial: `Полиамид PA2200
-Полимер на основе нейлона в форме белого порошка`,
-      itemDescription: `Габариты камеры: 340х340х600 мм
-Высота слоя: от 100 мкм
-Минимальный размер печатаемых элементов: 400 мкм`,
-      itemUseCase: `Изделия сложной геометрии;
-Функциональные прототипы;
-Корпусные изделия с высоким качеством поверхности.`,
-    },
-    {
-      itemName: 'Original Prusa i3 Mk3 MMU2, Bambu Lab',
-      itemImg: prusa_bambu,
-      itemMaterial: `Пластики ABS, PLA, ASA
-Материалы с наполнителями (в т.ч. Антипирены`,
-      itemDescription: `Габариты камеры: макс. 400х400х450 мм
-Высота слоя:  200 мкм
-Минимальный размер печатаемых элементов: 500 мкм`,
-      itemUseCase: `Прототипы изделий;
-Макеты;
-Корпусные изделия, не требующие высокой точности исполнения.`,
-    },
-    {
-      itemName: '5D-принтер Stereotech 530 HYBRID',
-      itemImg: stereotech,
-      itemMaterial: `Пластики ABS, PLA, ASA
-Материалы с наполнителями (в т.ч. Антипирены)`,
-      itemDescription: `Габариты камеры: макс. 330х330х250 мм 
-Высота слоя: 200 мкм 
-Минимальный размер печатаемых элементов: 500 мкм`,
-      itemUseCase: `Прототипы изделий;
-Макеты;
-Корпусные изделия, не требующие высокой точности исполнения.`,
-    },
-    {
-      itemName: 'Anycubic Photon M3 Max',
-      itemImg: anycubic,
-      itemMaterial: `Фотополимерные смолы`,
-      itemDescription: `макс. габариты камеры:
-300х298х164 мм
-Высота слоя: от 10 мкм
-Минимальный размер печатаемых
-элементов: 100 мкм`,
-      itemUseCase: `Точные изделия сложной геометрии;
-Мастер-модели для точного литья;
-Прототипы высокого качества.`,
-    },
-    {
-      itemName: 'Phrozen Sonic Mega 8K',
-      itemImg: phrozen,
-      itemMaterial: `Фотополимерные смолы`,
-      itemDescription: `Габариты камеры: 330х185х400 мм
-Высота слоя: от 10 мкм
-Минимальный размер печатаемых элементов: 100`,
-      itemUseCase: `Точные изделия сложной геометрии;
-Мастер-модели для точного литья;
-Прототипы высокого качества.`,
-    },
-    {
-      itemName: 'Лазерные системы M350',
-      itemImg: lasersys,
-      itemMaterial: `Стали (316L, 17-4PH. 12Х18Н10Т);
-Сплавы титана (Ti6Al4V, ВТ-14, ВТ-20);
-Сплавы никеля (Inconel 718/939/625);
-Сплавы алюминия (AlSi10Mg, AlSi9Cu3);
-Медные сплавы.`,
-      itemDescription: `Габариты камеры: 350x350x350 мм
-Высота слоя: от 20 мкм`,
-      itemUseCase: `Рабочие высоконагруженные изделия;
-Изделия со сложной внутренней геометрией, непригодные для производства традиционными методами.`,
-    },
-    {
-      itemName: 'EOS M270',
-      itemImg: eos_m270,
-      itemMaterial: `Стали (316L, 17-4PH. 12Х18Н10Т);
-Сплавы титана (Ti6Al4V, ВТ-14, ВТ-20);
-Сплавы никеля (Inconel 718/939/625);
-Сплавы алюминия (AlSi10Mg, AlSi9Cu3);
-Медные сплавы.`,
-      itemDescription: `Габариты камеры: 250х250х215 мм
-Высота слоя: от 10 мкм`,
-      itemUseCase: `Рабочие высоконагруженные изделия;
-Изделия со сложной внутренней геометрией, непригодные для производства традиционными методами.`,
-    },
-    {
-      itemName: 'Координатно-измерительная машина FARO ARM EDGE',
-      itemImg: '',
-      itemMaterial: ``,
-      itemDescription: `Контактный щуп FARO
-Оптический излучатель Kreon Zephyr 50
-Габариты объекта: до 1.2 м
-Точность: от 30 мкм`,
-      itemUseCase: ``,
-    },
-    {
-      itemName: '3D-сканер RangeVision Spectrum',
-      itemImg: '',
-      itemMaterial: ``,
-      itemDescription: `Две промышленные камеры для более точного определения 3D точки и 3 области сканирования
-Габариты объекта: до 3 м
-Точность: от 40 мкм`,
-      itemUseCase: ``,
-    },
-    {
-      itemName: 'Портативный оптический сканер FARO Focus 3D',
-      itemImg: '',
-      itemMaterial: ``,
-      itemDescription: `Лазерный сканер с высокой скоростью обработки данных и высокой эффективностью
-Габариты объекта: до 10 м
-Точность: от 100 мкм на 4 метра`,
-      itemUseCase: ``,
-    },
-    {
-      itemName: ' Scanform L5',
-      itemImg: '',
-      itemMaterial: ``,
-      itemDescription: `Ручной 3D-сканер, работающий по технологии триангуляции лазерной сетки
-Габариты объекта: до 4 м
-Точность: до 40 мкм`,
-      itemUseCase: ``,
-    },
-  ]
+const MAX_VISIBILITY = 3;
 
-  const equipmentEl = equipment.map((item) => (
-    <div
-      className='equipment-object'
-      key={`equipment-object-${item.itemName}-${item.itemMaterial}`}
-    >
-      <div className='text-block'>
-        <h2 className='equipment-name'>{item.itemName}</h2>
-        {item.itemDescription && (
-          <p className='equipment-description'>{item.itemDescription}</p>
-        )}
-        {item.itemMaterial && (
-          <p>
-            Материал: <br />
-            {item.itemMaterial}
-          </p>
-        )}
-        {item.itemUseCase && (
-          <p>
-            Области применения: <br />
-            {item.itemUseCase}
-          </p>
-        )}
-      </div>
-      <img className='equipment-img' src={item.itemImg} />
-    </div>
-  ))
+const equipment = [
+  {
+    equipmentName: "EOS P395 (SLS-печать)",
+    equipmentImg: "images/equipment/EOS.png",
+    equipmentInnerText: (
+      <>
+        <p>Габариты камеры: 340х340х600 мм </p>
+        <p>Высота слоя: от 100 мкм </p>
+        <p>Минимальный размер печатаемых элементов: 400 мкм</p>
+        <h3>Материал:</h3>
+        <ul>
+          <li>Полиамид PA2200</li>
+          <li>Полимер на основе нейлона в форме белого порошка</li>
+        </ul>
+        <h3>Применение:</h3>
+        <ul>
+          <li>Изделия сложной геометрии;</li>
+          <li>Функциональные прототипы;</li>
+          <li>Корпусные изделия с высоким качеством поверхности.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    equipmentName: "Original Prusa i3 Mk3 MMU2, Bambu Lab (FDM-печать)",
+    equipmentImg: "images/equipment/Prusa_Bambu.png",
+    equipmentInnerText: (
+      <>
+        <p>Габариты камеры: макс. 400х400х450 мм</p>
+        <p>Высота слоя: 200 мкм</p>
+        <p>Минимальный размер печатаемых элементов: 500 мкм</p>
+        <h3>Материал:</h3>
+        <ul>
+          <li>Пластики ABS, PLA, ASA</li>
+          <li>Материалы с наполнителями (в т.ч. Антипирены)</li>
+        </ul>
+        <h3>Применение:</h3>
+        <ul>
+          <li>Прототипы изделий;</li>
+          <li>Макеты;</li>
+          <li>Корпусные изделия, не требующие высокой точности исполнения.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    equipmentName: "5D-принтер Stereotech 530 HYBRID (FDM-печать)",
+    equipmentImg: "images/equipment/Stereotech.png",
+    equipmentInnerText: (
+      <>
+        <p>Габариты камеры: макс. 330х330х250 мм </p>
+        <p>Высота слоя: 200 мкм </p>
+        <p>Минимальный размер печатаемых элементов: 500 мкм</p>
+        <h3>Материал:</h3>
+        <ul>
+          <li>Пластики ABS, PLA, ASA</li>
+          <li>Материалы с наполнителями (в т.ч. Антипирены)</li>
+        </ul>
+        <h3>Применение:</h3>
+        <ul>
+          <li>Прототипы изделий;</li>
+          <li>Макеты;</li>
+          <li>Корпусные изделия, не требующие высокой точности исполнения.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    equipmentName: "Anycubic Photon M3 Max",
+    equipmentImg: "images/equipment/Anycubic.png",
+    equipmentInnerText: (
+      <>
+        <p>Габариты камеры: макс. 300х298х164 мм</p>
+        <p>Высота слоя: от 10 мкм</p>
+        <p>Минимальный размер печатаемых элементов: 100 мкм</p>
+        <h3>Материал:</h3>
+        <ul>
+          <li>Фотополимерные смолы</li>
+        </ul>
+        <h3>Применение:</h3>
+        <ul>
+          <li>Точные изделия сложной геометрии;</li>
+          <li>Прототипы высокого качества.</li>
+          <li>Мастер-модели для точного литья;</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    equipmentName: "Phrozen Sonic Mega 8K",
+    equipmentImg: "images/equipment/phrozen.png",
+    equipmentInnerText: (
+      <>
+        <p>Габариты камеры: 330х185х400 мм</p>
+        <p>Высота слоя: от 10 мкм</p>
+        <p>Минимальный размер печатаемых элементов: 100 мкм</p>
+        <h3>Материал:</h3>
+        <ul>
+          <li>Фотополимерные смолы</li>
+        </ul>
+        <h3>Применение:</h3>
+        <ul>
+          <li>Точные изделия сложной геометрии;</li>
+          <li>Прототипы высокого качества.</li>
+          <li>Мастер-модели для точного литья;</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    equipmentName: "Лазерные системы M350",
+    equipmentImg: "images/equipment/lasersys.png",
+    equipmentInnerText: (
+      <>
+        <p>Габариты камеры: 350x350x350 мм</p>
+        <p>Высота слоя: от 20 мкм</p>
+        <h3>Материал:</h3>
+        <ul>
+          <li>Стали (316L, 17-4PH. 12Х18Н10Т);</li>
+          <li>Сплавы титана (Ti6Al4V, ВТ-14, ВТ-20);</li>
+          <li>Сплавы никеля (Inconel 718/939/625);</li>
+          <li>Сплавы алюминия (AlSi10Mg, AlSi9Cu3);</li>
+          <li>Медные сплавы.</li>
+        </ul>
+        <h3>Применение:</h3>
+        <ul>
+          <li> Рабочие высоконагруженные изделия;</li>
+          <li>
+            Изделия со сложной внутренней геометрией, непригодные для
+            производства традиционными методами.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    equipmentName: "EOS M270",
+    equipmentImg: "images/equipment/EOS_M270.png",
+    equipmentInnerText: (
+      <>
+        <p>Габариты камеры: 250х250х215 мм</p>
+        <p>Высота слоя: от 10 мкм</p>
+        <h3>Материал:</h3>
+        <ul>
+          <li>Стали (316L, 17-4PH. 12Х18Н10Т);</li>
+          <li>Сплавы титана (Ti6Al4V, ВТ-14, ВТ-20);</li>
+          <li>Сплавы никеля (Inconel 718/939/625);</li>
+          <li>Сплавы алюминия (AlSi10Mg, AlSi9Cu3);</li>
+          <li>Медные сплавы.</li>
+        </ul>
+        <h3>Применение:</h3>
+        <ul>
+          <li> Рабочие высоконагруженные изделия;</li>
+          <li>
+            Изделия со сложной внутренней геометрией, непригодные для
+            производства традиционными методами.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    equipmentName: "",
+    equipmentImg: "images/equipment/",
+    equipmentInnerText: <></>,
+  },
+  {
+    equipmentName: "",
+    equipmentImg: "images/equipment/",
+    equipmentInnerText: <></>,
+  },
+];
+
+const EquipmentCard = ({ equipmentName, equipmentImg, equipmentInnerText }) => (
+  <div className="equipment-item">
+    <h1 className="equipment-item__title">{equipmentName}</h1>
+    <img src={equipmentImg} />
+    <div className="equipment-item__inner-text">{equipmentInnerText}</div>
+  </div>
+);
+
+EquipmentCard.propTypes = {
+  equipmentName: PropTypes.string,
+  equipmentImg: PropTypes.string,
+  equipmentInnerText: PropTypes.node,
+};
+
+const Carousel = ({ children }) => {
+  const [active, setActive] = React.useState(0);
+  const count = React.Children.count(children);
 
   return (
-    <div className='equipment-container'>
-      <Bookmark logoImg={equipmentLogoImg} />
-      <div className='equipment'>
+    <>
+      {active > 0 && (
+        <button className="nav left" onClick={() => setActive((i) => i - 1)}>
+          <img src="images/icons/left-arrow.png" />
+        </button>
+      )}
+      <div className="carousel">
+        {React.Children.map(children, (child, i) => (
+          <div
+            className="card-container"
+            style={{
+              "--offset": (active - i) / 3,
+              "--direction": Math.sign(active - i),
+              "--abs-offset": Math.abs(active - i) / 3,
+              opacity: Math.abs(active - i) >= MAX_VISIBILITY ? "0" : "1",
+              display: Math.abs(active - i) > MAX_VISIBILITY ? "none" : "flex",
+            }}
+          >
+            {child}
+          </div>
+        ))}
+      </div>
+      {active < count - 1 && (
+        <button className="nav right" onClick={() => setActive((i) => i + 1)}>
+          <img src="images/icons/right-arrow.png" />
+        </button>
+      )}
+    </>
+  );
+};
+
+Carousel.propTypes = {
+  children: PropTypes.node,
+};
+
+const Equipment = () => {
+  const equipmentEl = equipment
+    .filter((equipment) => equipment.equipmentName && equipment.equipmentImg)
+    .map((equipment, i) => (
+      <EquipmentCard
+        key={`equipment-card__${i}`}
+        equipmentName={equipment.equipmentName}
+        equipmentImg={equipment.equipmentImg}
+        equipmentInnerText={equipment.equipmentInnerText}
+      />
+    ));
+
+  return (
+    <div className="equipment-container">
+      <Bookmark logoImg="images/about__equipment.png" />
+      <div className="equipment">
         <h1>Оборудование</h1>
-        <div className='equipment-objects'>{equipmentEl}</div>
+        <div className="equipment__carousel">
+          <Carousel>{equipmentEl}</Carousel>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default Equipment;

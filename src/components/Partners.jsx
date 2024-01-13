@@ -1,47 +1,40 @@
-import React from 'react'
-import './Partners.css'
-import aeromax from '../images/partners/aeromax.png'
-import oak from '../images/partners/oak.png'
-import odk from '../images/partners/odk.png'
-import reshetnev from '../images/partners/reshetnev.png'
-import skoltech from '../images/partners/skoltech.png'
-import technospark from '../images/partners/technospark.png'
+import "./Partners.css";
 
 export default function Partners() {
   const partners = [
     {
-      partnerImg: aeromax,
+      partnerImg: "images/partners/aeromax.png",
     },
     {
-      partnerImg: technospark,
+      partnerImg: "images/partners/technospark.png",
     },
     {
-      partnerImg: odk,
+      partnerImg: "images/partners/odk.png",
     },
     {
-      partnerImg: reshetnev,
+      partnerImg: "images/partners/reshetnev.png",
     },
     {
-      partnerImg: skoltech,
+      partnerImg: "images/partners/skoltech.png",
     },
     {
-      partnerImg: oak,
+      partnerImg: "images/partners/oak.png",
     },
-  ]
+  ];
 
   const partnersEl = partners.map((item, index) => (
-    <div className='partners__item' key={`partner-img-${index}`}>
+    <div className="partners__item" key={`partner-img-${index}`}>
       <img
-        style={{ width: '200px', height: '100px' }}
+        style={{ width: "200px", height: "100px" }}
         src={item.partnerImg}
       ></img>
     </div>
-  ))
+  ));
 
   return (
-    <div className='partners'>
+    <div className="partners">
       <h1>Партнеры</h1>
-      <div className='partners__container'>{partnersEl}</div>
+      <div className="partners__container">{partnersEl}</div>
     </div>
-  )
+  );
 }
