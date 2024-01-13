@@ -13,6 +13,9 @@ import stereotech from "../../images/equipment/Stereotech.png";
 
 import about__equipment from "../../images/about__equipment.png";
 
+import leftArrow from "../../images/icons/left-arrow.png";
+import rightArrow from "../../images/icons/right-arrow.png";
+
 const MAX_VISIBILITY = 3;
 
 const equipment = [
@@ -210,7 +213,7 @@ const Carousel = ({ children }) => {
     <>
       {active > 0 && (
         <button className="nav left" onClick={() => setActive((i) => i - 1)}>
-          <img src="images/icons/left-arrow.png" />
+          <img src={leftArrow} />
         </button>
       )}
       <div className="carousel">
@@ -231,7 +234,7 @@ const Carousel = ({ children }) => {
       </div>
       {active < count - 1 && (
         <button className="nav right" onClick={() => setActive((i) => i + 1)}>
-          <img src="images/icons/right-arrow.png" />
+          <img src={rightArrow} />
         </button>
       )}
     </>
