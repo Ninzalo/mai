@@ -1,20 +1,23 @@
 import "./About.css";
+import aboutServices from "../../images/about__services.png";
+import aboutEquipment from "../../images/about__equipment.png";
+import aboutProjects from "../../images/about__projects.png";
 
 export default function About() {
   const cards = [
     {
       cardName: "Компетенции",
-      cardImg: "images/about__services.png",
+      cardImg: aboutServices,
       cardText: "",
     },
     {
       cardName: "Оборудование",
-      cardImg: "images/about__equipment.png",
+      cardImg: aboutEquipment,
       cardText: "",
     },
     {
       cardName: "Проекты",
-      cardImg: "images/about__projects.png",
+      cardImg: aboutProjects,
       cardText: "",
     },
   ];

@@ -3,12 +3,22 @@ import Bookmark from "./Bookmark";
 import React from "react";
 import PropTypes from "prop-types";
 
+import anycubic from "../../images/equipment/Anycubic.png";
+import eos from "../../images/equipment/EOS.png";
+import eosM270 from "../../images/equipment/EOS_M270.png";
+import lasersys from "../../images/equipment/lasersys.png";
+import phrozen from "../../images/equipment/phrozen.png";
+import prusaBambu from "../../images/equipment/Prusa_Bambu.png";
+import stereotech from "../../images/equipment/Stereotech.png";
+
+import about__equipment from "../../images/about__equipment.png";
+
 const MAX_VISIBILITY = 3;
 
 const equipment = [
   {
     equipmentName: "EOS P395 (SLS-печать)",
-    equipmentImg: "images/equipment/EOS.png",
+    equipmentImg: eos,
     equipmentInnerText: (
       <>
         <p>Габариты камеры: 340х340х600 мм </p>
@@ -30,7 +40,7 @@ const equipment = [
   },
   {
     equipmentName: "Original Prusa i3 Mk3 MMU2, Bambu Lab (FDM-печать)",
-    equipmentImg: "images/equipment/Prusa_Bambu.png",
+    equipmentImg: prusaBambu,
     equipmentInnerText: (
       <>
         <p>Габариты камеры: макс. 400х400х450 мм</p>
@@ -52,7 +62,7 @@ const equipment = [
   },
   {
     equipmentName: "5D-принтер Stereotech 530 HYBRID (FDM-печать)",
-    equipmentImg: "images/equipment/Stereotech.png",
+    equipmentImg: stereotech,
     equipmentInnerText: (
       <>
         <p>Габариты камеры: макс. 330х330х250 мм </p>
@@ -74,7 +84,7 @@ const equipment = [
   },
   {
     equipmentName: "Anycubic Photon M3 Max",
-    equipmentImg: "images/equipment/Anycubic.png",
+    equipmentImg: anycubic,
     equipmentInnerText: (
       <>
         <p>Габариты камеры: макс. 300х298х164 мм</p>
@@ -95,7 +105,7 @@ const equipment = [
   },
   {
     equipmentName: "Phrozen Sonic Mega 8K",
-    equipmentImg: "images/equipment/phrozen.png",
+    equipmentImg: phrozen,
     equipmentInnerText: (
       <>
         <p>Габариты камеры: 330х185х400 мм</p>
@@ -116,7 +126,7 @@ const equipment = [
   },
   {
     equipmentName: "Лазерные системы M350",
-    equipmentImg: "images/equipment/lasersys.png",
+    equipmentImg: lasersys,
     equipmentInnerText: (
       <>
         <p>Габариты камеры: 350x350x350 мм</p>
@@ -142,7 +152,7 @@ const equipment = [
   },
   {
     equipmentName: "EOS M270",
-    equipmentImg: "images/equipment/EOS_M270.png",
+    equipmentImg: eosM270,
     equipmentInnerText: (
       <>
         <p>Габариты камеры: 250х250х215 мм</p>
@@ -246,7 +256,7 @@ const Equipment = () => {
 
   return (
     <div className="equipment-container">
-      <Bookmark logoImg="images/about__equipment.png" />
+      <Bookmark logoImg={about__equipment} />
       <div className="equipment">
         <h1>Оборудование</h1>
         <div className="equipment__carousel">

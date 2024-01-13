@@ -1,10 +1,11 @@
 import "./Services.css";
 import Bookmark from "./Bookmark";
+import aboutServices from "../../images/about__services.png";
 
 export default function Services() {
   return (
     <div className="services">
-      <Bookmark logoImg="images/about__services.png" />
+      <Bookmark logoImg={aboutServices} />
       <div className="text-area">
         <h1>Компетенции</h1>
         <p>Лаборатория занимается:</p>

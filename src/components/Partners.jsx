@@ -1,24 +1,30 @@
 import "./Partners.css";
+import aeromax from "../../images/partners/aeromax.png";
+import oak from "../../images/partners/oak.png";
+import odk from "../../images/partners/odk.png";
+import reshetnev from "../../images/partners/reshetnev.png";
+import skoltech from "../../images/partners/skoltech.png";
+import technospark from "../../images/partners/technospark.png";
 
 export default function Partners() {
   const partners = [
     {
-      partnerImg: "images/partners/aeromax.png",
+      partnerImg: aeromax,
     },
     {
-      partnerImg: "images/partners/technospark.png",
+      partnerImg: technospark,
     },
     {
-      partnerImg: "images/partners/odk.png",
+      partnerImg: odk,
     },
     {
-      partnerImg: "images/partners/reshetnev.png",
+      partnerImg: reshetnev,
     },
     {
-      partnerImg: "images/partners/skoltech.png",
+      partnerImg: skoltech,
     },
     {
-      partnerImg: "images/partners/oak.png",
+      partnerImg: oak,
     },
   ];
 

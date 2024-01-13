@@ -1,17 +1,21 @@
 import "./Projects.css";
 import Bookmark from "./Bookmark";
+import pr1 from "../../images/projects/pr1.png";
+import pr2 from "../../images/projects/pr2.png";
+
+import aboutProjects from "../../images/about__projects.png";
 
 export default function Projects() {
   const projects = [
     {
       projectName: "Модель самолета Ту-324 Aurus",
-      projectImg: "images/projects/pr1.png",
+      projectImg: pr1,
       projectDescription:
         "Модель распечатана на SLS-установке EOS P395 из порошка полиамида PA 2200. Обработана и покрашена по специально изготовленным в лаборатории трафаретам в соответствии с дизайном заказчика.",
     },
     {
       projectName: "Робот ЕВА",
-      projectImg: "images/projects/pr2.png",
+      projectImg: pr2,
       projectDescription:
         "С нуля по референсам создали дизайн робота высотой 175 см в программном комплексе zBrush. Печатали из пластиковой нити PETG и жидкого фотополимера по технологиям FDM и SLA. Для достижения товарного вида проводили постобработку и покраску поверхности.",
     },
@@ -29,7 +33,7 @@ export default function Projects() {
 
   return (
     <div className="projects-container">
-      <Bookmark logoImg="images/about__projects.png" />
+      <Bookmark logoImg={aboutProjects} />
       <div className="projects">
         <h1>Проекты</h1>
         <div className="projects-list">{projectsEl}</div>
