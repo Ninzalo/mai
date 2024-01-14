@@ -16,7 +16,7 @@ import about__equipment from "../../images/about__equipment.png";
 import leftArrow from "../../images/icons/left-arrow.png";
 import rightArrow from "../../images/icons/right-arrow.png";
 
-const MAX_VISIBILITY = 3;
+const MAX_VISIBILITY = 4;
 
 const equipment = [
   {

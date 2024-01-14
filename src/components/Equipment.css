@@ -34,12 +34,13 @@
   justify-content: center;
   align-items: center;
 
-  background-color: rgb(210, 210, 210);
+  background-color: transparent;
   height: 3.5rem;
   width: 3.5rem;
   margin: 0 auto 0 auto;
   padding: 0;
   border: none;
+  outline: none;
   border-radius: 1rem;
 
   cursor: pointer;
@@ -93,7 +94,7 @@
   > .carousel
   > .card-container {
   width: auto;
-  height: calc(auto - 4rem);
+  height: auto;
   margin: 0;
   padding: 0;
 
@@ -101,13 +102,14 @@
   transform: rotateY(calc(var(--offset) * 50deg))
     scaleY(calc(1 + var(--abs-offset) * -0.4))
     translateZ(calc(var(--abs-offset) * -30rem))
-    translateX(calc(var(--direction) * -7rem));
+    translateX(calc(var(--direction) * -5rem));
   filter: blur(calc(var(--abs-offset) * 1rem));
   transition: all 0.3s ease-out;
   background-color: rgb(210, 210, 210);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--background-color);
   border-radius: 50px;
 }
 
@@ -120,7 +122,7 @@
   > .equipment-item {
   border-radius: 1rem;
 
-  width: calc(25rem - 4rem);
+  width: calc(40rem - 4rem);
   height: auto;
   margin: 0 auto 0 auto;
   padding: 2rem;
