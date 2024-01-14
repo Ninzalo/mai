@@ -208,6 +208,29 @@ EquipmentCard.propTypes = {
 const Carousel = ({ children }) => {
   const [active, setActive] = React.useState(0);
   const count = React.Children.count(children);
+  const [maxHeight, setMaxHeight] = React.useState(0);
+  const refs = [...new Array(count)].map(() => React.useRef(null));
+  const [windowHeight, setWindowHeight] = React.useState(window.innerHeight);
+
+  React.useEffect(() => {
+    console.log(window.innerHeight);
+    refs.forEach((ref) => {
+      if (ref.current) {
+        const currentHeight = ref.current.clientHeight;
+        if (currentHeight > maxHeight) {
+          setMaxHeight(currentHeight);
+        }
+      }
+    });
+  }, [refs, windowHeight]);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowHeight(window.innerHeight);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -216,21 +239,28 @@ const Carousel = ({ children }) => {
           <img src={leftArrow} />
         </button>
       )}
-      <div className="carousel">
-        {React.Children.map(children, (child, i) => (
-          <div
-            className="card-container"
-            style={{
-              "--offset": (active - i) / 3,
-              "--direction": Math.sign(active - i),
-              "--abs-offset": Math.abs(active - i) / 3,
-              opacity: Math.abs(active - i) >= MAX_VISIBILITY ? "0" : "1",
-              display: Math.abs(active - i) > MAX_VISIBILITY ? "none" : "flex",
-            }}
-          >
-            {child}
-          </div>
-        ))}
+      <div
+        className="carousel__placeholder"
+        style={{ height: `${maxHeight}px` }}
+      >
+        <div className="carousel">
+          {React.Children.map(children, (child, i) => (
+            <div
+              ref={refs[i]}
+              className="card-container"
+              style={{
+                "--offset": (active - i) / 3,
+                "--direction": Math.sign(active - i),
+                "--abs-offset": Math.abs(active - i) / 3,
+                opacity: Math.abs(active - i) >= MAX_VISIBILITY ? "0" : "1",
+                dispay:
+                  Math.abs(active - i) >= MAX_VISIBILITY ? "none" : "flex",
+              }}
+            >
+              {child}
+            </div>
+          ))}
+        </div>
       </div>
       {active < count - 1 && (
         <button className="nav right" onClick={() => setActive((i) => i + 1)}>
@@ -240,6 +270,22 @@ const Carousel = ({ children }) => {
     </>
   );
 };
+
+// {React.Children.map(children, (child, i) => (
+//   <div
+//     className="card-container"
+//     style={{
+//       "--offset": (active - i) / 3,
+//       "--direction": Math.sign(active - i),
+//       "--abs-offset": Math.abs(active - i) / 3,
+//       opacity: Math.abs(active - i) >= MAX_VISIBILITY ? "0" : "1",
+//       display:
+//         Math.abs(active - i) > MAX_VISIBILITY ? "none" : "flex",
+//     }}
+//   >
+//     {child}
+//   </div>
+// ))}
 
 Carousel.propTypes = {
   children: PropTypes.node,

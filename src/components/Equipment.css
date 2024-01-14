@@ -21,48 +21,64 @@
 
 .equipment-container > .equipment > .equipment__carousel {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
+  width: 100%;
 }
 
 .equipment-container > .equipment > .equipment__carousel > .nav {
-  position: absolute;
   z-index: 2;
-
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
+  background-color: rgb(210, 210, 210);
+  height: 3.5rem;
+  width: 3.5rem;
+  margin: 0 auto 0 auto;
+  padding: 0;
   border: none;
   border-radius: 1rem;
-
-  background-color: var(--block-grey-color);
-
-  height: 4rem;
-  width: 4rem;
 
   cursor: pointer;
 
   &.left {
-    left: calc(45px + 75px);
+    grid-column: 1;
   }
-
   &.right {
-    right: 3rem;
+    grid-column: 3;
+  }
+
+  img {
+    height: 3rem;
+    width: 3rem;
   }
 }
-.equipment-container > .equipment > .equipment__carousel > .nav > img {
-  height: 3rem;
-  width: 3rem;
+
+.equipment-container
+  > .equipment
+  > .equipment__carousel
+  > .carousel__placeholder {
+  grid-column: 2;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
-.equipment-container > .equipment > .equipment__carousel > .carousel {
+.equipment-container
+  > .equipment
+  > .equipment__carousel
+  > .carousel__placeholder
+  > .carousel {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
   position: relative;
-  width: 30rem;
-  min-height: 55rem;
-  height: auto;
   perspective: "500px";
   transform-style: preserve-3d;
   display: flex;
@@ -73,15 +89,19 @@
 .equipment-container
   > .equipment
   > .equipment__carousel
+  > .carousel__placeholder
   > .carousel
   > .card-container {
+  width: auto;
+  height: calc(auto - 4rem);
+  margin: 0;
+  padding: 0;
+
   position: absolute;
-  width: 100%;
-  height: auto;
   transform: rotateY(calc(var(--offset) * 50deg))
     scaleY(calc(1 + var(--abs-offset) * -0.4))
     translateZ(calc(var(--abs-offset) * -30rem))
-    translateX(calc(var(--direction) * -17rem));
+    translateX(calc(var(--direction) * -7rem));
   filter: blur(calc(var(--abs-offset) * 1rem));
   transition: all 0.3s ease-out;
   background-color: rgb(210, 210, 210);
@@ -89,71 +109,66 @@
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  padding: 2rem;
 }
 
 .equipment-container
   > .equipment
   > .equipment__carousel
+  > .carousel__placeholder
   > .carousel
   > .card-container
   > .equipment-item {
+  border-radius: 1rem;
+
+  width: calc(25rem - 4rem);
   height: auto;
-  width: auto;
+  margin: 0 auto 0 auto;
+  padding: 2rem;
+
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
-}
 
-.equipment-container
-  > .equipment
-  > .equipment__carousel
-  > .carousel
-  > .card-container
-  > .equipment-item
-  > img {
-  height: 20rem;
-  width: 20rem;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 1rem;
-}
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 
-.equipment-container
-  > .equipment
-  > .equipment__carousel
-  > .carousel
-  > .card-container
-  > .equipment-item
-  > .equipment-item__inner-text
-  > p {
-  margin: 0;
-  padding: 0;
-}
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
 
-.equipment-container
-  > .equipment
-  > .equipment__carousel
-  > .carousel
-  > .card-container
-  > .equipment-item
-  > .equipment-item__inner-text
-  > h3 {
-  margin: 0;
-  margin-top: 0.3rem;
-  padding: 0;
-}
+  img {
+    height: 20rem;
+    width: 20rem;
+    margin: 0;
+    padding: 0;
+  }
 
-.equipment-container
-  > .equipment
-  > .equipment__carousel
-  > .carousel
-  > .card-container
-  > .equipment-item
-  > .equipment-item__inner-text
-  > ul {
-  margin: 0;
-  margin-left: 1.2rem;
-  padding: 0;
+  .equipment-item__inner-text {
+    margin: 0;
+    margin-top: 1rem;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    h3 {
+      margin: 0;
+      margin-top: 1rem;
+      padding: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0 0 0 1.2rem;
+      }
+    }
+  }
 }
