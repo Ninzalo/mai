@@ -10,6 +10,10 @@ import lasersys from "../../images/equipment/lasersys.png";
 import phrozen from "../../images/equipment/phrozen.png";
 import prusaBambu from "../../images/equipment/Prusa_Bambu.png";
 import stereotech from "../../images/equipment/Stereotech.png";
+import faro from "../../images/equipment/FARO.png";
+import rangeVision from "../../images/equipment/RangeVision.png";
+import focus3d from "../../images/equipment/Focus_3D.png";
+import scanform from "../../images/equipment/Scanform_L5.png";
 
 import about__equipment from "../../images/about__equipment.png";
 
@@ -180,13 +184,66 @@ const equipment = [
     ),
   },
   {
+    equipmentName: "Координатно-измерительная машина FARO ARM EDGE",
+    equipmentImg: faro,
+    equipmentInnerText: (
+      <>
+        <p>Контактный щуп FARO</p>
+        <p>Оптический излучатель Kreon Zephyr 50</p>
+        <p>Габариты объекта: до 1.2 м</p>
+        <p>Точность: от 30 мкм</p>
+      </>
+    ),
+  },
+  {
+    equipmentName: "3D-сканер RangeVision Spectrum",
+    equipmentImg: rangeVision,
+    equipmentInnerText: (
+      <>
+        <p>
+          Две промышленные камеры для более точного определения 3D точки и 3
+          области сканирования
+        </p>
+        <p>Габариты объекта: до 3 м</p>
+        <p>Точность: от 40 мкм</p>
+      </>
+    ),
+  },
+  {
+    equipmentName: "Портативный оптический сканер FARO Focus 3D",
+    equipmentImg: focus3d,
+    equipmentInnerText: (
+      <>
+        <p>
+          Лазерный сканер с высокой скоростью обработки данных и высокой
+          эффективностью
+        </p>
+        <p>Габариты объекта: до 10 м</p>
+        <p>Точность: от 100 мкм на 4 метра</p>
+      </>
+    ),
+  },
+  {
+    equipmentName: "Scanform L5",
+    equipmentImg: scanform,
+    equipmentInnerText: (
+      <>
+        <p>
+          Ручной 3D-сканер, работающий по технологии триангуляции лазерной сетки
+        </p>
+        <p>Габариты объекта: до 4 м</p>
+        <p>Точность: до 40 мкм</p>
+      </>
+    ),
+  },
+  {
     equipmentName: "",
-    equipmentImg: "images/equipment/",
+    equipmentImg: "",
     equipmentInnerText: <></>,
   },
   {
     equipmentName: "",
-    equipmentImg: "images/equipment/",
+    equipmentImg: "",
     equipmentInnerText: <></>,
   },
 ];
@@ -213,12 +270,11 @@ const Carousel = ({ children }) => {
   const [windowHeight, setWindowHeight] = React.useState(window.innerHeight);
 
   React.useEffect(() => {
-    console.log(window.innerHeight);
     refs.forEach((ref) => {
       if (ref.current) {
         const currentHeight = ref.current.clientHeight;
         if (currentHeight > maxHeight) {
-          setMaxHeight(currentHeight);
+          setMaxHeight(currentHeight + 5 * 2);
         }
       }
     });
