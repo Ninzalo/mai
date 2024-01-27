@@ -22,14 +22,17 @@ export default function About() {
     },
   ];
 
-  const cardEls = cards.map((item) => (
-    <div className="about-card" key={`about-card-${item.cardName}`}>
+  const cardEls = cards.map((item, index) => (
+    <div className="about-card" key={`about-card-${index}`}>
       <img
         style={{ width: "150px", height: "150px" }}
         className="card-img"
         src={item.cardImg}
       />
-      <div className="text-block">{item.cardName}</div>
+      <div className="text-block">
+        <h2>{item.cardName}</h2>
+        <p>{item.cardText}</p>
+      </div>
     </div>
   ));
 
