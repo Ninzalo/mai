@@ -7,6 +7,7 @@ import Equipment from "./components/Equipment";
 import Projects from "./components/Projects";
 import Partners from "./components/Partners";
 import MapComponent from "./components/Map";
+import Team from "./components/Team";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <About />
       <Services />
+      <Team />
       <Equipment />
       <Projects />
       <Partners />
