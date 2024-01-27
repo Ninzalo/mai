@@ -15,9 +15,9 @@ function App() {
       <Header />
       <About />
       <Services />
-      <Team />
       <Equipment />
       <Projects />
+      <Team />
       <Partners />
       <MapComponent />
     </div>
