@@ -1,5 +1,5 @@
 import "./Header.css";
-import headerBackground from "../../images/header/1.jpg";
+import headerBackground from "../../images/header/2.jpg";
 
 export default function Header() {
   return (
@@ -7,7 +7,7 @@ export default function Header() {
       <img
         src={headerBackground}
         alt="header background"
-        style={{ width: "100%" }}
+        style={{ "--header-img-width": window.innerWidth }}
       />
       <div className="info-block">
         <h1 className="main-text">Лаборатория №4</h1>
