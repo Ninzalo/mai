@@ -6,7 +6,9 @@
   overflow: hidden;
 
   img {
-    width: var(--header-img-width);
+    /* width: var(--header-img-width); */
+    width: 100%;
+    /* max-width: var(--header-img-width); */
     height: auto;
     display: block;
     margin: 0 auto;
